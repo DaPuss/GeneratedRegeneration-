@@ -1,16 +1,11 @@
 import React from 'react'
-import Image from 'next/image'
-import { Container, Heading, Box, Stack, chakra } from '@chakra-ui/react'
+import { Container, Heading, Box, Stack } from '@chakra-ui/react'
+import ChakraImage from './ChakraImage'
 
 type CardProps = {
   role: string
   name: string
 }
-
-const ChakraImage = chakra(Image, {
-  shouldForwardProp: (prop: string) =>
-    ['width', 'height', 'src', 'alt'].includes(prop),
-})
 
 const Card = ({ role, name }: CardProps) => {
   return (

@@ -1,13 +1,16 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import { Global, css } from '@emotion/react'
-import { ChakraProvider, ColorModeProvider, useColorMode } from '@chakra-ui/react'
+import {
+  ChakraProvider,
+  ColorModeProvider,
+  useColorMode,
+} from '@chakra-ui/react'
 import { prismLightTheme, prismDarkTheme } from '../styles/prism'
 import customTheme from '../styles/theme'
-import Layout from '../components/Layout'
 import React from 'react'
 
-const GlobalStyle = ({ children }:{children: React.ReactNode}) => {
+const GlobalStyle = ({ children }: { children: React.ReactNode }) => {
   const { colorMode } = useColorMode()
 
   return (
@@ -16,7 +19,7 @@ const GlobalStyle = ({ children }:{children: React.ReactNode}) => {
         styles={css`
           ${colorMode === 'light' ? prismLightTheme : prismDarkTheme};
           ::selection {
-            background-color: #90CDF4;
+            background-color: #90cdf4;
             color: #fefefe;
           }
           ::-moz-selection {
@@ -45,17 +48,16 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ChakraProvider resetCSS theme={customTheme}>
       <ColorModeProvider
         options={{
-          initialColorMode: "light",
+          initialColorMode: 'light',
           useSystemColorMode: true,
         }}
       >
         <GlobalStyle>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
+          <Component {...pageProps} />
         </GlobalStyle>
       </ColorModeProvider>
     </ChakraProvider>
-  )}
+  )
+}
 
 export default MyApp

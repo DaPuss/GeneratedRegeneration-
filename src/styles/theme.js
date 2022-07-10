@@ -4,8 +4,8 @@ import { createBreakpoints } from '@chakra-ui/theme-tools'
 
 const fonts = {
   ...chakraTheme.fonts,
-  body: `Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"`,
-  heading: `Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"`,
+  body: `Maitree,Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"`,
+  body: `Maitree,Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"`,
 }
 
 const breakpoints = createBreakpoints({
@@ -22,7 +22,7 @@ const colors = {
     emerald: '#379683',
     lightMalachite: '#5cdb95',
     tealDeer: '#8ee4af',
-    alabaster: '#edf5e1',
+    alabaster: '##ebf0e4',
   },
 }
 

@@ -29,12 +29,13 @@ const GlobalStyle = ({ children }: { children: React.ReactNode }) => {
           html {
             min-width: 356px;
             scroll-behavior: smooth;
+            font-family: 'Maitree', serif;
           }
           #__next {
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            background: ${colorMode === 'light' ? 'white' : '#171717'};
+            background: ${colorMode === 'light' ? '#edf0e9' : '#171717'};
           }
         `}
       />

@@ -5,7 +5,7 @@ import Accordian from './Accordian'
 import ChakraImage from './ChakraImage'
 import Footer from './Footer'
 import Team from './Team'
-import WalletButton from './WalletButton'
+import Web3Connect from './Web3Connect'
 
 export {
   Link,
@@ -15,5 +15,5 @@ export {
   ChakraImage as Image,
   Footer,
   Team,
-  WalletButton,
+  Web3Connect,
 }

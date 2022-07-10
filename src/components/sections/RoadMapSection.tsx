@@ -12,7 +12,7 @@ const RoadMapSection = () => {
         padding={'5rem'}
       >
         <Heading marginBottom={'2rem'}>Roadmap</Heading>
-        <Text fontSize={'1.5rem'}>
+        <Text>
           But I must explain to you how all this mistaken idea of denouncing
           <br /> <br />
           pleasure and praising pain was born pleasure, but because those who do

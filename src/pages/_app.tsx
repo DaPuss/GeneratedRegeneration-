@@ -1,31 +1,18 @@
 import '../styles/globals.css'
+import React from 'react'
 import type { AppProps } from 'next/app'
 import { Global, css } from '@emotion/react'
-import {
-  ChakraProvider,
-  ColorModeProvider,
-  useColorMode,
-} from '@chakra-ui/react'
-import { prismLightTheme, prismDarkTheme } from '../styles/prism'
+import { ChakraProvider } from '@chakra-ui/react'
+import { WagmiConfig } from 'wagmi'
+
 import customTheme from '../styles/theme'
-import React from 'react'
+import { client } from '../config/Web3Config'
 
 const GlobalStyle = ({ children }: { children: React.ReactNode }) => {
-  const { colorMode } = useColorMode()
-
   return (
     <>
       <Global
         styles={css`
-          ${colorMode === 'light' ? prismLightTheme : prismDarkTheme};
-          ::selection {
-            background-color: #90cdf4;
-            color: #fefefe;
-          }
-          ::-moz-selection {
-            background: #ffb7b7;
-            color: #fefefe;
-          }
           html {
             min-width: 356px;
             scroll-behavior: smooth;
@@ -35,7 +22,7 @@ const GlobalStyle = ({ children }: { children: React.ReactNode }) => {
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            background: ${colorMode === 'light' ? '#edf0e9' : '#171717'};
+            background: '#edf0e9';
           }
         `}
       />
@@ -47,16 +34,11 @@ const GlobalStyle = ({ children }: { children: React.ReactNode }) => {
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider resetCSS theme={customTheme}>
-      <ColorModeProvider
-        options={{
-          initialColorMode: 'light',
-          useSystemColorMode: true,
-        }}
-      >
-        <GlobalStyle>
+      <GlobalStyle>
+        <WagmiConfig client={client}>
           <Component {...pageProps} />
-        </GlobalStyle>
-      </ColorModeProvider>
+        </WagmiConfig>
+      </GlobalStyle>
     </ChakraProvider>
   )
 }

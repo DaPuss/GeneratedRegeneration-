@@ -1,21 +1,37 @@
 import { Flex, VStack, Heading, Text, Stack } from '@chakra-ui/react'
 
-const KeyDateCard = () => {
+const KeyDateCard = ({
+  date,
+  time,
+  group,
+  maxMint,
+}: {
+  date: string
+  time: string
+  group: string
+  maxMint?: number
+}) => {
+  const mintPrice = 0.09
+  const totalSupply = 6000
+  const currentSupply = 1703
+
   return (
     <VStack
       borderRadius={'10px'}
       spacing={'1rem'}
       padding={'3rem'}
+      marginLeft={'1rem !important'}
+      marginRight={'1rem !important'}
       bg={'#FFFFF0'}
     >
-      <Heading>Key Date 1</Heading>
-      <Text>11:00 AM PST / 24 hrs</Text>
-      <Text>Partners & Founders</Text>
+      <Heading>{date}</Heading>
+      <Text>{time}</Text>
+      <Text>{group}</Text>
       <Heading color={'brand.lightMalachite'} size={'lg'}>
-        1703/6000
+        {currentSupply}/{totalSupply}
       </Heading>
-      <Text>Price: 0.09 ETH</Text>
-      <Text>Max Mint: 2</Text>
+      <Text>Price: {mintPrice} ETH</Text>
+      {maxMint && <Text>Max Mint: {maxMint}</Text>}
     </VStack>
   )
 }
@@ -34,14 +50,28 @@ const KeyDateSection = () => {
       ></Flex>
       <Stack
         zIndex={20}
-        padding={'5rem'}
+        padding={{ base: '0', md: '5rem' }}
         width={'100%'}
         direction={{ base: 'column', md: 'row' }}
         justifyContent={'space-evenly'}
       >
-        <KeyDateCard />
-        <KeyDateCard />
-        <KeyDateCard />
+        <KeyDateCard
+          date={'November 1'}
+          time={'11:00 AM PST / 24 hrs'}
+          group={'Partners & Founders'}
+          maxMint={2}
+        />
+        <KeyDateCard
+          date={'November 2'}
+          time={'11:00 AM PST / 24 hrs'}
+          group={'Raffle Winners'}
+          maxMint={2}
+        />
+        <KeyDateCard
+          date={'November 3'}
+          time={'11:00 AM PST / 24 hrs'}
+          group={'Public Sale'}
+        />
       </Stack>
     </Flex>
   )

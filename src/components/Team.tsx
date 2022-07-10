@@ -1,26 +1,36 @@
 import React from 'react'
-import { Container, Heading, Box, Stack } from '@chakra-ui/react'
+import {
+  Container,
+  Heading,
+  Box,
+  Stack,
+  useBreakpointValue,
+  Text,
+} from '@chakra-ui/react'
 import ChakraImage from './ChakraImage'
 
 type CardProps = {
   role: string
   name: string
+  twitter: string
 }
 
-const Card = ({ role, name }: CardProps) => {
+const Card = ({ role, name, twitter }: CardProps) => {
+  const size = useBreakpointValue({ base: '150', md: '250' })
   return (
     <Box textAlign={'center'}>
       <Box>
         <ChakraImage
           borderRadius={10}
           src={'/ThePussPFP.jpg'}
-          width={250}
-          height={250}
+          width={size}
+          height={size}
           alt={`${role}-card`}
         />
       </Box>
-      <Heading>{role}</Heading>
-      <Heading size={'md'}>{name}</Heading>
+      <Heading>{name}</Heading>
+      <Text>{role}</Text>
+      <Text>{twitter}</Text>
     </Box>
   )
 }
@@ -31,16 +41,14 @@ const Team = () => {
       <Stack spacing={10} alignItems={'center'}>
         <Heading>Team</Heading>
         <Stack
+          wrap={'wrap'}
+          justifyContent={'space-evenly'}
+          direction={'row'}
           minWidth="100%"
-          margin={5}
-          justifyContent="space-evenly"
-          alignItems={'Center'}
-          spacing={{ base: 10, md: 5 }}
-          direction={{ base: 'column', sm: 'row' }}
         >
-          <Card role={'The Code Monkey'} name={'DaPuss'} />
-          <Card role={'All Round Guru'} name={'DaPuss'} />
-          <Card role={'The AI Guy'} name={'DaPuss'} />
+          <Card role={'The Code Monkey'} name={'DaPuss'} twitter={'@DaPuss'} />
+          <Card role={'All Round Guru'} name={'DaPuss'} twitter={'@DaPuss'} />
+          <Card role={'The AI Guy'} name={'DaPuss'} twitter={'@DaPuss'} />
         </Stack>
       </Stack>
     </Container>

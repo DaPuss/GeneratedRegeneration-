@@ -4,7 +4,7 @@ import ChakraImage from '../ChakraImage'
 
 const AboutMintSection = () => {
   return (
-    <Stack>
+    <Stack reverseColumn={true}>
       <AspectRatio ratio={1 / 1} width={{ base: '100%', md: '50%' }}>
         <ChakraImage layout={'fill'} src={'/trees1.jpg'} />
       </AspectRatio>
@@ -15,7 +15,7 @@ const AboutMintSection = () => {
         padding={'5rem'}
       >
         <Heading marginBottom={'2rem'}>Generated Regeneration Mint</Heading>
-        <Text fontSize={'1.5rem'}>
+        <Text>
           Supply: 6000 Price: 0.09 ETH Max Mint: 2 for DadListed 2 for Premint
           Mint dates: July 1–3 July 1 — DadList & Partners July 2 — Premint
           raffle July 3 — Public DadList members will also have the option to

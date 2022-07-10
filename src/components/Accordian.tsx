@@ -21,8 +21,8 @@ const Accordian = () => {
   ]
 
   return (
-    <Box width="100%" m="10" p="10">
-      <Heading mb="5">Frequently Asked Questions</Heading>
+    <Box width="100%" m={'1rem'} padding={{ base: '0', md: '1rem' }}>
+      <Heading mb="5">FAQs</Heading>
       <ChakraAccordion width="100%" allowMultiple>
         {accList.map((item) => item)}
       </ChakraAccordion>
@@ -38,12 +38,12 @@ const acordianItem = (sectionTitle: string, sectionContent: string) => (
       _focus={{
         border: '0',
         borderBottom: '2px',
-        borderColor: '#FCA311',
+        borderColor: 'theme.ateneo',
       }}
       _active={{
         border: '0',
         borderBottom: '2px',
-        borderColor: '#FCA311',
+        borderColor: 'theme.ateneo',
       }}
       _hover={{
         border: '0',
@@ -52,7 +52,7 @@ const acordianItem = (sectionTitle: string, sectionContent: string) => (
       mb="5"
       border="0"
       borderBottom="2px"
-      borderColor="#FCA311"
+      borderColor="theme.ateneo"
     >
       <Box flex="1" textAlign="left">
         {sectionTitle}

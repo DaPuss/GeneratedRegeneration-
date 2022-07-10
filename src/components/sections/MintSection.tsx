@@ -1,7 +1,8 @@
-import { Box, Button, Flex, HStack } from '@chakra-ui/react'
+import { Box, Flex, HStack } from '@chakra-ui/react'
 import { BsTwitter, BsDiscord } from 'react-icons/bs'
 import Link from '../Link'
 import Mint from '../Mint'
+import Web3Connect from '../Web3Connect'
 
 const MintSection = () => {
   return (
@@ -32,13 +33,12 @@ const MintSection = () => {
           </Link>
         </Flex>
         <Box display={'flex'} flexGrow={1}></Box>
-        <Button
-          borderRadius={20}
-          mr={{ base: '2rem !important', md: '5rem !important' }}
+        <Web3Connect
+          borderLeftRadius={20}
+          borderRightRadius={20}
           bg={'brand.lightMalachite'}
-        >
-          Connect Wallet
-        </Button>
+          marginRight={'4rem !important'}
+        />
       </HStack>
       <Mint />
     </Box>

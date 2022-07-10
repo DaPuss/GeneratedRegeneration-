@@ -4,7 +4,7 @@ import ChakraImage from '../ChakraImage'
 
 const VisionSection = () => {
   return (
-    <Stack>
+    <Stack reverseColumn={true}>
       <AspectRatio ratio={1 / 1} width={{ base: '100%', md: '50%' }}>
         <ChakraImage layout={'fill'} src={'/trees1.jpg'} />
       </AspectRatio>
@@ -15,7 +15,7 @@ const VisionSection = () => {
         padding={'5rem'}
       >
         <Heading marginBottom={'2rem'}>Our Vision</Heading>
-        <Text fontSize={'1.5rem'}>
+        <Text>
           But I must explain to you how all this mistaken idea of denouncing
           <br /> <br />
           pleasure and praising pain was born pleasure, but because those who do

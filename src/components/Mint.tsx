@@ -27,12 +27,7 @@ const Mint = () => {
 
   return (
     <Center>
-      <Flex
-        width={'50%'}
-        alignItems={'center'}
-        margin={'3rem'}
-        direction={'column'}
-      >
+      <Flex alignItems={'center'} margin={'3rem'} direction={'column'}>
         <Heading size={'2xl'} marginTop={'3rem'} marginBottom={'3rem'}>
           Mint a Tree
         </Heading>

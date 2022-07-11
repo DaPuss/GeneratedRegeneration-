@@ -1,5 +1,6 @@
+import { useState } from 'react'
 import { Flex, VStack, Heading, Text, Stack } from '@chakra-ui/react'
-
+import { content } from '../../data/content'
 const KeyDateCard = ({
   date,
   time,
@@ -9,15 +10,15 @@ const KeyDateCard = ({
   date: string
   time: string
   group: string
-  maxMint?: number
+  maxMint?: string
 }) => {
   const mintPrice = 0.09
   const totalSupply = 6000
-  const currentSupply = 1703
+  const [currentSupply, setCurrentSupply] = useState(1703)
 
   return (
     <VStack
-      borderRadius={'10px'}
+      boxShadow={'0px 0px 10px rgba(0, 0, 0, .5)'}
       spacing={'1rem'}
       padding={'3rem'}
       marginLeft={'1rem !important'}
@@ -36,6 +37,11 @@ const KeyDateCard = ({
   )
 }
 const KeyDateSection = () => {
+  const cards = [
+    content.keyDateCards.card1,
+    content.keyDateCards.card2,
+    content.keyDateCards.card3,
+  ]
   return (
     <Flex position={'relative'}>
       <Flex
@@ -53,25 +59,17 @@ const KeyDateSection = () => {
         padding={{ base: '0', md: '5rem' }}
         width={'100%'}
         direction={{ base: 'column', md: 'row' }}
-        justifyContent={'space-evenly'}
+        justifyContent={'center'}
       >
-        <KeyDateCard
-          date={'November 1'}
-          time={'11:00 AM PST / 24 hrs'}
-          group={'Partners & Founders'}
-          maxMint={2}
-        />
-        <KeyDateCard
-          date={'November 2'}
-          time={'11:00 AM PST / 24 hrs'}
-          group={'Raffle Winners'}
-          maxMint={2}
-        />
-        <KeyDateCard
-          date={'November 3'}
-          time={'11:00 AM PST / 24 hrs'}
-          group={'Public Sale'}
-        />
+        {cards.map((card, index) => (
+          <KeyDateCard
+            key={`keyDate-${index}`}
+            date={card.date}
+            time={card.time}
+            group={card.group}
+            maxMint={card.maxMint}
+          />
+        ))}
       </Stack>
     </Flex>
   )

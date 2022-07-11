@@ -49,10 +49,7 @@ const Mint = () => {
           </NumberInput>
           {isConnected ? (
             <Button
-              width={'100%'}
               borderLeftRadius={0}
-              borderRightRadius={20}
-              bg={'brand.lightMalachite'}
               marginLeft={'0 !important'}
               onClick={onMintClick}
             >

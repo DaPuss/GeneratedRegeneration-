@@ -1,6 +1,7 @@
 import { Center, Text, Heading, AspectRatio } from '@chakra-ui/react'
 import Stack from '../Stack'
 import ChakraImage from '../ChakraImage'
+import { content } from '../../data/content'
 
 const AboutProjectSection = () => {
   return (
@@ -11,17 +12,10 @@ const AboutProjectSection = () => {
         width={{ base: '100%', md: '50%' }}
         padding={'5rem'}
       >
-        <Heading marginBottom={'2rem'}>Generated Regeneration</Heading>
-        <Text>
-          But I must explain to you how all this mistaken idea of denouncing
-          <br /> <br />
-          pleasure and praising pain was born pleasure, but because those who do
-          not know how to pursue pleasure rationally encounter consequences
-          <br /> <br />
-          pleasure and praising pain was born pleasure, but because those who do
-          not know how to pursue pleasure rationally encounter consequences
-          <br /> <br />
-        </Text>
+        <Heading marginBottom={'2rem'}>
+          {content.aboutProjectSection.title}
+        </Heading>
+        <Text>{content.aboutProjectSection.content}</Text>
       </Center>
       <AspectRatio ratio={1 / 1} width={{ base: '100%', md: '50%' }}>
         <ChakraImage layout={'fill'} src={'/trees1.jpg'} />

@@ -1,6 +1,7 @@
 import { Center, Text, Heading, AspectRatio } from '@chakra-ui/react'
 import Stack from '../Stack'
 import ChakraImage from '../ChakraImage'
+import { content } from '../../data/content'
 
 const VisionSection = () => {
   return (
@@ -14,17 +15,8 @@ const VisionSection = () => {
         width={{ base: '100%', md: '50%' }}
         padding={'5rem'}
       >
-        <Heading marginBottom={'2rem'}>Our Vision</Heading>
-        <Text>
-          But I must explain to you how all this mistaken idea of denouncing
-          <br /> <br />
-          pleasure and praising pain was born pleasure, but because those who do
-          not know how to pursue pleasure rationally encounter consequences
-          <br /> <br />
-          pleasure and praising pain was born pleasure, but because those who do
-          not know how to pursue pleasure rationally encounter consequences
-          <br /> <br />
-        </Text>
+        <Heading marginBottom={'2rem'}>{content.visionSection.title}</Heading>
+        <Text>{content.visionSection.content}</Text>
       </Center>
     </Stack>
   )

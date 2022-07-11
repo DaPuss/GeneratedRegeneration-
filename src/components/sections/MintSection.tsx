@@ -15,6 +15,10 @@ const MintSection = () => {
           borderRadius={'1.5rem'}
           justifyContent={'center'}
           alignItems={'center'}
+          boxShadow={'0px 0px 10px rgba(0, 0, 0, .2)'}
+          _hover={{
+            boxShadow: '0px 0px 10px rgba(0, 0, 0, .5)',
+          }}
         >
           <Link href="/discord">
             <BsDiscord fill={'white'} size={'1.5rem'} />
@@ -27,6 +31,10 @@ const MintSection = () => {
           borderRadius={'1.5rem'}
           justifyContent={'center'}
           alignItems={'center'}
+          boxShadow={'0px 0px 10px rgba(0, 0, 0, .2)'}
+          _hover={{
+            boxShadow: '0px 0px 10px rgba(0, 0, 0, .5)',
+          }}
         >
           <Link href="/twitter">
             <BsTwitter fill={'white'} size={'1.5rem'} />
@@ -37,7 +45,7 @@ const MintSection = () => {
           borderLeftRadius={20}
           borderRightRadius={20}
           bg={'brand.lightMalachite'}
-          marginRight={'4rem !important'}
+          mr={{ base: '2rem !important', md: '5rem !important' }}
         />
       </HStack>
       <Mint />

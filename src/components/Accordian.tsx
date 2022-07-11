@@ -9,22 +9,26 @@ import {
   Heading,
 } from '@chakra-ui/react'
 
-const Accordian = () => {
-  const title = 'Title'
-  const content =
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
-  const accList = [
-    acordianItem(title, content),
-    acordianItem(title, content),
-    acordianItem(title, content),
-    acordianItem(title, content),
-  ]
+interface AccordianProps {
+  content: AccordianItemProps[]
+}
+interface AccordianItemProps {
+  title: string
+  content: string
+}
 
+const Accordian = ({ content }: AccordianProps) => {
   return (
     <Box width="100%" m={'1rem'} padding={{ base: '0', md: '1rem' }}>
       <Heading mb="5">FAQs</Heading>
       <ChakraAccordion width="100%" allowMultiple>
-        {accList.map((item) => item)}
+        {content.map((item, index) => (
+          <AcordianItem
+            key={`āi-${index}`}
+            title={item.title}
+            content={item.content}
+          />
+        ))}
       </ChakraAccordion>
     </Box>
   )
@@ -32,7 +36,7 @@ const Accordian = () => {
 
 export default Accordian
 
-const acordianItem = (sectionTitle: string, sectionContent: string) => (
+const AcordianItem = ({ title, content }: AccordianItemProps) => (
   <AccordionItem border="none">
     <AccordionButton
       _focus={{
@@ -55,10 +59,10 @@ const acordianItem = (sectionTitle: string, sectionContent: string) => (
       borderColor="theme.ateneo"
     >
       <Box flex="1" textAlign="left">
-        {sectionTitle}
+        {title}
       </Box>
       <AccordionIcon />
     </AccordionButton>
-    <AccordionPanel pb={4}>{sectionContent}</AccordionPanel>
+    <AccordionPanel pb={4}>{content}</AccordionPanel>
   </AccordionItem>
 )

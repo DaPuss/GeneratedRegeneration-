@@ -6,6 +6,7 @@ import {
   GiHealthPotion,
 } from 'react-icons/gi'
 import { BiHappyHeartEyes } from 'react-icons/bi'
+import { content } from '../../data/content'
 
 const BenefitSection = () => {
   return (
@@ -24,27 +25,27 @@ const BenefitSection = () => {
         <VStack>
           <GiFruitTree size={150} />
           <Heading>1</Heading>
-          <Text>Plant 1000s of trees around the world</Text>
+          <Text>{content.benefits.benefit1}</Text>
         </VStack>
         <VStack>
           <GiEarthAmerica size={150} />
           <Heading>2</Heading>
-          <Text>Help prevent climate change</Text>
+          <Text>{content.benefits.benefit2}</Text>
         </VStack>
         <VStack>
           <GiRiver size={150} />
           <Heading>3</Heading>
-          <Text>Restore the environment</Text>
+          <Text>{content.benefits.benefit3}</Text>
         </VStack>
         <VStack>
           <GiHealthPotion size={150} />
           <Heading>4</Heading>
-          <Text>Make the planet healthier for everyone</Text>
+          <Text>{content.benefits.benefit4}</Text>
         </VStack>
         <VStack>
           <BiHappyHeartEyes size={150} />
           <Heading>5</Heading>
-          <Text>Improve wellbeing through increased greenspace</Text>
+          <Text>{content.benefits.benefit5}</Text>
         </VStack>
       </Stack>
     </Stack>

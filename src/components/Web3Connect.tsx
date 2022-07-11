@@ -17,8 +17,7 @@ const Web3Connect = (props: ButtonProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const { address, isConnected } = useAccount()
   const { data: ensName } = useEnsName({ address })
-  const { connect, connectors, error, isLoading, pendingConnector } =
-    useConnect()
+  const { connect, connectors, isLoading, pendingConnector } = useConnect()
   const { disconnect } = useDisconnect()
   const disconnectFunction = () => {
     disconnect()
@@ -41,7 +40,7 @@ const Web3Connect = (props: ButtonProps) => {
         <ModalContent>
           <ModalHeader>Connect Wallet</ModalHeader>
           <ModalCloseButton />
-          <ModalBody>
+          <ModalBody padding={'2rem'}>
             <Stack>
               {connectors.map((connector) => (
                 <Button
@@ -57,8 +56,6 @@ const Web3Connect = (props: ButtonProps) => {
                 </Button>
               ))}
             </Stack>
-
-            {error && <div>{error.message}</div>}
           </ModalBody>
         </ModalContent>
       </Modal>

@@ -24,6 +24,40 @@ const colors = {
     tealDeer: '#8ee4af',
     alabaster: '##ebf0e4',
   },
+  primary: {
+    main: '#05386B',
+    secondry: '#379683',
+    text: '#5cdb95',
+    button: '#8ee4af',
+    background: '##ebf0e4',
+  },
+  buttonPrimary: {
+    main: '#5cdb95',
+  },
+}
+
+const Button = {
+  // The styles all button have in common
+  baseStyle: {
+    fontWeight: '600',
+    fontSizes: '0.875rem',
+    textTransform: 'uppercase',
+    borderRadius: 20,
+  },
+  variants: {
+    solid: {
+      bg: colors.buttonPrimary.main,
+      color: 'black',
+      boxShadow: '0 0 10px  rgba(0,0,0,0.2)',
+      _hover: {
+        bg: colors.buttonPrimary.main,
+        boxShadow: '0 0 10px  rgba(0,0,0,0.5)',
+      },
+      _focus: {
+        bg: colors.buttonPrimary.main,
+      },
+    },
+  },
 }
 
 const overrides = {
@@ -47,6 +81,9 @@ const overrides = {
     '4xl': '36px',
     '5xl': '48px',
     '6xl': '64px',
+  },
+  components: {
+    Button,
   },
 }
 

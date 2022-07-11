@@ -1,5 +1,6 @@
 import { Center } from '@chakra-ui/react'
 import { Accordian } from '../'
+import { content } from '../../data/content'
 
 const FaqSection = () => {
   return (
@@ -9,7 +10,7 @@ const FaqSection = () => {
       width={'100%'}
       padding={'5rem'}
     >
-      <Accordian />
+      <Accordian content={content.faq} />
     </Center>
   )
 }

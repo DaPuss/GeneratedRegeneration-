@@ -14,7 +14,7 @@ const KeyDateCard = ({
 }) => {
   const mintPrice = 0.09
   const totalSupply = 6000
-  const [currentSupply, setCurrentSupply] = useState(1703)
+  const [currentSupply] = useState(1703)
 
   return (
     <VStack

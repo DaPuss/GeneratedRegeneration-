@@ -10,7 +10,7 @@ import { content } from '../../data/content'
 
 const BenefitSection = () => {
   return (
-    <Stack bg={'brand.lightMalachite'} padding={'5rem'}>
+    <Stack bg={'section.benefits'} padding={'5rem'}>
       <Heading marginBottom={'4rem'} size={'3xl'}>
         Benefits
       </Heading>

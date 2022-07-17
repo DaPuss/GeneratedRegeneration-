@@ -8,7 +8,8 @@ const FaqSection = () => {
       margin={'0 !important'}
       flexDirection={'column'}
       width={'100%'}
-      padding={'5rem'}
+      paddingLeft={{ md: '5rem', base: '2rem' }}
+      paddingRight={{ md: '5rem', base: '2rem' }}
     >
       <Accordian content={content.faq} />
     </Center>

@@ -41,22 +41,28 @@ const AcordianItem = ({ title, content }: AccordianItemProps) => (
     <AccordionButton
       _focus={{
         border: '0',
-        borderBottom: '2px',
-        borderColor: 'theme.ateneo',
+        borderBottom: '4px',
+        borderColor: 'section.accordian',
+      }}
+      _focusVisible={{
+        border: '0',
+        borderBottom: '4px',
+        borderColor: 'section.accordian',
       }}
       _active={{
         border: '0',
-        borderBottom: '2px',
-        borderColor: 'theme.ateneo',
+        borderBottom: '4px',
+        borderColor: 'section.accordian',
       }}
       _hover={{
         border: '0',
-        borderBottom: '2px',
+        borderBottom: '4px',
+        borderColor: 'section.accordian',
       }}
       mb="5"
       border="0"
-      borderBottom="2px"
-      borderColor="theme.ateneo"
+      borderBottom="4px"
+      borderColor="section.accordian"
     >
       <Box flex="1" textAlign="left">
         {title}

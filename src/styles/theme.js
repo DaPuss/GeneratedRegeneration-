@@ -17,22 +17,22 @@ const breakpoints = createBreakpoints({
 
 const colors = {
   ...chakraTheme.colors,
-  brand: {
-    ateneo: '#05386B',
-    emerald: '#379683',
-    lightMalachite: '#5cdb95',
-    tealDeer: '#8ee4af',
-    alabaster: '##ebf0e4',
+
+  buttons: {
+    main: '#c1fba4',
+    social: '#a98467',
   },
-  primary: {
-    main: '#05386B',
-    secondry: '#379683',
-    text: '#5cdb95',
-    button: '#8ee4af',
-    background: '##ebf0e4',
-  },
-  buttonPrimary: {
-    main: '#5cdb95',
+  section: {
+    title: {
+      header: 'white',
+      background: '#a98467',
+    },
+    footer: '#90f1ef',
+    keyDates: {
+      supply: '#c1fba4',
+    },
+    benefits: '#5cdb95',
+    accordian: '#ee6055',
   },
 }
 
@@ -46,15 +46,15 @@ const Button = {
   },
   variants: {
     solid: {
-      bg: colors.buttonPrimary.main,
+      bg: colors.buttons.main,
       color: 'black',
       boxShadow: '0 0 10px  rgba(0,0,0,0.2)',
       _hover: {
-        bg: colors.buttonPrimary.main,
+        bg: colors.buttons.main,
         boxShadow: '0 0 10px  rgba(0,0,0,0.5)',
       },
       _focus: {
-        bg: colors.buttonPrimary.main,
+        bg: colors.buttons.main,
       },
     },
   },

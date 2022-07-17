@@ -3,13 +3,14 @@ import { BsTwitter, BsDiscord } from 'react-icons/bs'
 import Link from '../Link'
 import Mint from '../Mint'
 import Web3Connect from '../Web3Connect'
+import { content } from '../../data/content'
 
 const MintSection = () => {
   return (
     <Box ml={'0 !important'} width={{ base: '100%', md: '50%' }}>
       <HStack ml={{ base: '2rem', md: '5rem' }} pt={'1rem'}>
         <Flex
-          bg={'brand.emerald'}
+          bg={'buttons.social'}
           width={'2.5rem'}
           height={'2.5rem'}
           borderRadius={'1.5rem'}
@@ -20,12 +21,12 @@ const MintSection = () => {
             boxShadow: '0px 0px 10px rgba(0, 0, 0, .5)',
           }}
         >
-          <Link href="/discord">
+          <Link href={content.discordLink}>
             <BsDiscord fill={'white'} size={'1.5rem'} />
           </Link>
         </Flex>
         <Flex
-          bg={'brand.emerald'}
+          bg={'buttons.social'}
           width={'2.5rem'}
           height={'2.5rem'}
           borderRadius={'1.5rem'}
@@ -36,7 +37,7 @@ const MintSection = () => {
             boxShadow: '0px 0px 10px rgba(0, 0, 0, .5)',
           }}
         >
-          <Link href="/twitter">
+          <Link href={content.twitterLink}>
             <BsTwitter fill={'white'} size={'1.5rem'} />
           </Link>
         </Flex>
@@ -44,7 +45,6 @@ const MintSection = () => {
         <Web3Connect
           borderLeftRadius={20}
           borderRightRadius={20}
-          bg={'brand.lightMalachite'}
           mr={{ base: '2rem !important', md: '5rem !important' }}
         />
       </HStack>

@@ -6,15 +6,15 @@ const TitleSection = () => {
     <Flex
       flexDirection={'row'}
       width={{ base: '100%', md: '50%' }}
-      bg={'brand.emerald'}
+      bg={'section.title.background'}
       alignItems={'start'}
       paddingLeft={'2rem'}
       justifyItems={'center'}
     >
-      <Logo />
+      <Logo fill={'white'} />
       <Heading
         size={{ base: 'lg', lg: 'xl', xl: '4xl' }}
-        color={'white'}
+        color={'section.title.header'}
         ml={5}
       >
         {content.title}

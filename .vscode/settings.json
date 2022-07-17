@@ -1,12 +1,13 @@
 {
-    "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true
-    },
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode", 
-    "workbench.colorCustomizations": {
-        "activityBar.background": "#4C1946",
-        "titleBar.activeBackground": "#6A2463",
-        "titleBar.activeForeground": "#FDF8FC"
-    }
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#4C1946",
+    "titleBar.activeBackground": "#6A2463",
+    "titleBar.activeForeground": "#FDF8FC"
+  }
 }

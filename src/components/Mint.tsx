@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import {
   Center,
   Flex,
@@ -11,29 +11,42 @@ import {
   NumberInput,
   NumberInputField,
 } from '@chakra-ui/react'
-
+import { ethers } from 'ethers'
 import { useAccount } from 'wagmi'
+import { useMintContract } from '../hooks/useMintContract'
 import Web3Connect from './Web3Connect'
 const Mint = () => {
   const { isConnected } = useAccount()
+  const { write } = useMintContract()
+  const [value, setValue] = useState('1')
+  const mintPrice = 0.09
 
-  const [value, setValue] = useState(1)
+  useEffect(() => {
+    const mintAmount = parseInt(value)
+    const totalPrice = mintAmount * mintPrice
+    const cost = ethers.utils.parseEther(totalPrice.toString())
+    ethers.utils.formatEther(cost)
+  }, [value])
 
   const onMintClick = () => {
     console.log('minting')
+    write({
+      args: [value],
+      overrides: {
+        value: ethers.utils.parseEther(value),
+      },
+    })
   }
-
-  const mintPrice = 0.09
 
   return (
     <Center>
       <Flex alignItems={'center'} margin={'3rem'} direction={'column'}>
         <Heading size={'2xl'} marginTop={'3rem'} marginBottom={'3rem'}>
-          Mint a Tree
+          Mint your Tree
         </Heading>
         <HStack>
           <NumberInput
-            onChange={(value) => setValue(parseInt(value))}
+            onChange={(value) => setValue(value)}
             keepWithinRange={true}
             defaultValue={1}
             min={0}
@@ -60,7 +73,6 @@ const Mint = () => {
               width={'100%'}
               borderLeftRadius={0}
               borderRightRadius={20}
-              bg={'brand.lightMalachite'}
               marginLeft={'0 !important'}
             />
           )}
@@ -74,7 +86,7 @@ const Mint = () => {
           <HStack>
             <Text width={'100%'}>1 x Tree</Text>
             <Text width={'100%'} textAlign={'right'}>
-              {(Math.round(value * mintPrice * 100) / 100).toFixed(2)}
+              {(Math.round(parseInt(value) * mintPrice * 100) / 100).toFixed(2)}
               ETH
             </Text>
           </HStack>
@@ -82,7 +94,7 @@ const Mint = () => {
           <HStack width={'100%'}>
             <Text width={'100%'}>Total</Text>
             <Text width={'100%'} textAlign={'right'}>
-              {(Math.round(value * mintPrice * 100) / 100).toFixed(2)}
+              {(Math.round(parseInt(value) * mintPrice * 100) / 100).toFixed(2)}
               ETH + gas
             </Text>
           </HStack>

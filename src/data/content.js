@@ -1,5 +1,7 @@
 export const content = {
   title: 'Fresh Leaf',
+  twitterLink: 'https://twitter.com/freshleaf',
+  discordLink: 'https://discord.com/freshleaf',
   keyDateCards: {
     card1: {
       date: 'November 1',

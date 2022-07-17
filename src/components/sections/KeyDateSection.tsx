@@ -28,7 +28,7 @@ const KeyDateCard = ({
       <Heading>{date}</Heading>
       <Text>{time}</Text>
       <Text>{group}</Text>
-      <Heading color={'brand.lightMalachite'} size={'lg'}>
+      <Heading color={'section.keyDates.supply'} size={'lg'}>
         {currentSupply}/{totalSupply}
       </Heading>
       <Text>Price: {mintPrice} ETH</Text>
@@ -51,7 +51,7 @@ const KeyDateSection = () => {
         height={'100%'}
         position={'absolute'}
         width={{ base: '0', md: '50%' }}
-        bg={'brand.emerald'}
+        bg={'section.title.background'}
         alignItems={{ base: 'center', md: 'start' }}
       ></Flex>
       <Stack

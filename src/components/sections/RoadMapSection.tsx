@@ -16,7 +16,7 @@ const RoadMapSection = () => {
         <Text>{content.roadmapSection.content}</Text>
       </Center>
       <AspectRatio ratio={1 / 1} width={{ base: '100%', md: '50%' }}>
-        <ChakraImage layout={'fill'} src={'/trees1.jpg'} />
+        <ChakraImage layout={'fill'} src={'/main3.jpg'} />
       </AspectRatio>
     </Stack>
   )

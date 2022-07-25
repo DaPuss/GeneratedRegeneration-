@@ -16,9 +16,18 @@ import { useAccount } from 'wagmi'
 import { useMintContract } from '../hooks/useMintContract'
 import Web3Connect from './Web3Connect'
 const Mint = () => {
-  const { isConnected } = useAccount()
+  const { status } = useAccount()
+  const [isConnected, setIsConnected] = useState(false)
   const { write } = useMintContract()
   const [value, setValue] = useState('1')
+  useEffect(() => {
+    if (status == 'connected') {
+      setIsConnected(true)
+    }
+    if (status == 'disconnected') {
+      setIsConnected(false)
+    }
+  }, [status])
   const mintPrice = 0.09
 
   useEffect(() => {

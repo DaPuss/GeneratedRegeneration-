@@ -3,10 +3,8 @@ import contractInterface from '../abi/abi.json'
 //custom hook that returns a function to call the mint function of the contract using WAGMI hooks
 
 export const useMintContract = () => {
-  const addressOrName = process.env.CONTRACT_ADDRESS
-    ? process.env.CONTRACT_ADDRESS
-    : ''
-  const functionName = 'mint'
+  const addressOrName = process.env.NEXT_PUBLIC_CONTRACT_ADDRESS
+  const functionName = 'mintMany'
 
   const mint = useContractWrite({
     addressOrName,

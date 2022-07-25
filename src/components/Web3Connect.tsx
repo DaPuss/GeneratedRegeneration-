@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useAccount, useConnect, useDisconnect, useEnsName } from 'wagmi'
 import {
   Button,
@@ -15,13 +15,25 @@ import {
 
 const Web3Connect = (props: ButtonProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
-  const { address, isConnected } = useAccount()
+  const { address, status } = useAccount()
   const { data: ensName } = useEnsName({ address })
   const { connect, connectors, isLoading, pendingConnector } = useConnect()
   const { disconnect } = useDisconnect()
+  const [isConnected, setIsConnected] = useState(false)
+
+  useEffect(() => {
+    if (status == 'connected') {
+      setIsConnected(true)
+    }
+    if (status == 'disconnected') {
+      setIsConnected(false)
+    }
+  }, [status])
+
   const disconnectFunction = () => {
     disconnect()
   }
+
   if (isConnected) {
     const addressConcat = `${address?.slice(0, 6)}..${address?.slice(
       address?.length - 4

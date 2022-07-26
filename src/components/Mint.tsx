@@ -18,8 +18,10 @@ import Web3Connect from './Web3Connect'
 const Mint = () => {
   const { status } = useAccount()
   const [isConnected, setIsConnected] = useState(false)
-  const { write } = useMintContract()
   const [value, setValue] = useState('1')
+  const [mintCost, setMintCost] = useState('1')
+  const { write } = useMintContract()
+
   useEffect(() => {
     if (status == 'connected') {
       setIsConnected(true)
@@ -31,18 +33,17 @@ const Mint = () => {
   const mintPrice = 0.09
 
   useEffect(() => {
-    const mintAmount = parseInt(value)
-    const totalPrice = mintAmount * mintPrice
-    const cost = ethers.utils.parseEther(totalPrice.toString())
-    ethers.utils.formatEther(cost)
+    const totalPrice = (parseInt(value) * mintPrice * 100) / 100
+    isNaN(totalPrice) ? setMintCost('0.00') : setMintCost(totalPrice.toFixed(2))
   }, [value])
 
   const onMintClick = () => {
-    console.log('minting')
+    console.log('minting', ethers.utils.parseEther(mintCost))
+    const to = '0x8626f6940E2eb28930eFb4CeF49B2d1F2C9C1199'
     write({
-      args: [value],
+      args: [to, value],
       overrides: {
-        value: ethers.utils.parseEther(value),
+        value: ethers.utils.parseEther(mintCost),
       },
     })
   }
@@ -95,7 +96,7 @@ const Mint = () => {
           <HStack>
             <Text width={'100%'}>1 x Tree</Text>
             <Text width={'100%'} textAlign={'right'}>
-              {(Math.round(parseInt(value) * mintPrice * 100) / 100).toFixed(2)}
+              {mintCost}
               ETH
             </Text>
           </HStack>
@@ -103,7 +104,7 @@ const Mint = () => {
           <HStack width={'100%'}>
             <Text width={'100%'}>Total</Text>
             <Text width={'100%'} textAlign={'right'}>
-              {(Math.round(parseInt(value) * mintPrice * 100) / 100).toFixed(2)}
+              {mintCost}
               ETH + gas
             </Text>
           </HStack>

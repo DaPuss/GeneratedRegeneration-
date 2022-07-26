@@ -1,6 +1,7 @@
-import { useState } from 'react'
 import { Flex, VStack, Heading, Text, Stack } from '@chakra-ui/react'
 import { content } from '../../data/content'
+import { useCurrentSupply } from '../../hooks/useCurrentSupply'
+
 const KeyDateCard = ({
   date,
   time,
@@ -13,8 +14,8 @@ const KeyDateCard = ({
   maxMint?: string
 }) => {
   const mintPrice = 0.09
-  const totalSupply = 6000
-  const [currentSupply] = useState(1703)
+  const maxSupply = 9000
+  const {} = useCurrentSupply()
 
   return (
     <VStack
@@ -29,7 +30,7 @@ const KeyDateCard = ({
       <Text>{time}</Text>
       <Text>{group}</Text>
       <Heading color={'section.keyDates.supply'} size={'lg'}>
-        {currentSupply}/{totalSupply}
+        {0}/{maxSupply}
       </Heading>
       <Text>Price: {mintPrice} ETH</Text>
       {maxMint && <Text>Max Mint: {maxMint}</Text>}

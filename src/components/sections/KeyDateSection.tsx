@@ -1,6 +1,7 @@
 import { Flex, VStack, Heading, Text, Stack } from '@chakra-ui/react'
+import { useEffect, useState } from 'react'
 import { content } from '../../data/content'
-import { useCurrentSupply } from '../../hooks/useCurrentSupply'
+import { useWeb3 } from '../../hooks/useWeb3'
 
 const KeyDateCard = ({
   date,
@@ -15,7 +16,14 @@ const KeyDateCard = ({
 }) => {
   const mintPrice = 0.09
   const maxSupply = 9000
-  const {} = useCurrentSupply()
+  const {totalSupply} = useWeb3()
+  const [loading, setIsLoading] = useState(true)
+
+  useEffect (() => {
+    if(totalSupply){
+      setIsLoading(false);
+    }
+  }, [totalSupply])
 
   return (
     <VStack
@@ -30,7 +38,9 @@ const KeyDateCard = ({
       <Text>{time}</Text>
       <Text>{group}</Text>
       <Heading color={'section.keyDates.supply'} size={'lg'}>
-        {0}/{maxSupply}
+        <>
+          {loading ? 0 : totalSupply}/{maxSupply}
+        </>
       </Heading>
       <Text>Price: {mintPrice} ETH</Text>
       {maxMint && <Text>Max Mint: {maxMint}</Text>}
@@ -77,3 +87,4 @@ const KeyDateSection = () => {
 }
 
 export default KeyDateSection
+

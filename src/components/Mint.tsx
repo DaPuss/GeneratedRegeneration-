@@ -11,16 +11,15 @@ import {
   NumberInput,
   NumberInputField,
 } from '@chakra-ui/react'
-import { ethers } from 'ethers'
 import { useAccount } from 'wagmi'
-import { useMintContract } from '../hooks/useMintContract'
+import { useWeb3 } from '../hooks/useWeb3'
 import Web3Connect from './Web3Connect'
 const Mint = () => {
   const { status } = useAccount()
   const [isConnected, setIsConnected] = useState(false)
-  const [value, setValue] = useState('1')
+  const [value, setValue] = useState(1)
   const [mintCost, setMintCost] = useState('1')
-  const { write } = useMintContract()
+  const { mintNft, getMintPrice } = useWeb3()
 
   useEffect(() => {
     if (status == 'connected') {
@@ -30,22 +29,14 @@ const Mint = () => {
       setIsConnected(false)
     }
   }, [status])
-  const mintPrice = 0.09
 
   useEffect(() => {
-    const totalPrice = (parseInt(value) * mintPrice * 100) / 100
-    isNaN(totalPrice) ? setMintCost('0.00') : setMintCost(totalPrice.toFixed(2))
+    setMintCost(() => getMintPrice(value))
   }, [value])
 
   const onMintClick = () => {
-    console.log('minting', ethers.utils.parseEther(mintCost))
-    const to = '0x8626f6940E2eb28930eFb4CeF49B2d1F2C9C1199'
-    write({
-      args: [to, value],
-      overrides: {
-        value: ethers.utils.parseEther(mintCost),
-      },
-    })
+    console.log(value)
+    mintNft(value);
   }
 
   return (
@@ -56,7 +47,7 @@ const Mint = () => {
         </Heading>
         <HStack>
           <NumberInput
-            onChange={(value) => setValue(value)}
+            onChange={(value) => setValue(parseInt(value))}
             keepWithinRange={true}
             defaultValue={1}
             min={0}

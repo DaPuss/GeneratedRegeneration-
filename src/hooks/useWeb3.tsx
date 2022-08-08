@@ -32,7 +32,7 @@ export const useWeb3 = () => {
   const mintNft = (mintAmount: number) => {
     if(mintAmount < 1) return;
 
-    const {write} = writeMint;
+    const {write, data, isError, isLoading, isSuccess, error} = writeMint;
     const totalCost = getMintPrice(mintAmount);
     
     write({
@@ -41,6 +41,7 @@ export const useWeb3 = () => {
         value: ethers.utils.parseEther(totalCost),
       },
     })
+    return {isError, data, isSuccess, isLoading, error}
   }
 
   const getMintPrice = (mintAmount: number) => {

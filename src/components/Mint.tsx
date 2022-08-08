@@ -10,6 +10,7 @@ import {
   Divider,
   NumberInput,
   NumberInputField,
+  useToast
 } from '@chakra-ui/react'
 import { useAccount } from 'wagmi'
 import { useWeb3 } from '../hooks/useWeb3'
@@ -20,6 +21,7 @@ const Mint = () => {
   const [value, setValue] = useState(1)
   const [mintCost, setMintCost] = useState('1')
   const { mintNft, getMintPrice } = useWeb3()
+  const toast = useToast()
 
   useEffect(() => {
     if (status == 'connected') {
@@ -35,8 +37,25 @@ const Mint = () => {
   }, [value])
 
   const onMintClick = () => {
-    console.log(value)
-    mintNft(value);
+    const result = mintNft(value);
+    console.log(result?.error)
+    if(result?.isError || !result?.isSuccess){
+      toast({
+        title: 'Error.',
+        description: result?.error?.message,
+        status: 'error',
+        duration: 9000,
+        isClosable: true,
+      })
+      return;
+    }
+    toast({
+      title: 'Successful.',
+      description: "You've minted your NFT.",
+      status: 'success',
+      duration: 9000,
+      isClosable: true,
+    })
   }
 
   return (

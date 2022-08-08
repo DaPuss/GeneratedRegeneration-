@@ -19,7 +19,7 @@ export const content = {
       date: 'November 3',
       time: '11:00 AM PST / 24 hrs',
       group: 'Public',
-      maxMint: '',
+      maxMint: '5',
     },
   },
   visionSection: {

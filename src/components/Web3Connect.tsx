@@ -39,7 +39,7 @@ const Web3Connect = (props: ButtonProps) => {
       address?.length - 4
     )}`
     return (
-      <Button onClick={disconnectFunction}>
+      <Button {...props} mt={4} onClick={disconnectFunction}>
         Disconnect: {ensName ? `${ensName} (${addressConcat})` : addressConcat}
       </Button>
     )

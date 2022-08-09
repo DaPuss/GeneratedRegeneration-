@@ -45,7 +45,7 @@ const MintSection = () => {
         <Web3Connect
           borderLeftRadius={20}
           borderRightRadius={20}
-          mr={{ base: '2rem !important', md: '5rem !important' }}
+          mr={{ base: '2rem !important'}}
         />
       </HStack>
       <Mint />

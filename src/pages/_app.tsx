@@ -22,7 +22,7 @@ const GlobalStyle = ({ children }: { children: React.ReactNode }) => {
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            background: '#edf0e9';
+            background: #f4f3f3;
           }
         `}
       />

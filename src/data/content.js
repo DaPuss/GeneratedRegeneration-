@@ -1,5 +1,5 @@
 export const content = {
-  title: 'Fresh Leaf',
+  title: 'Mushie',
   twitterLink: 'https://twitter.com/freshleaf',
   discordLink: 'https://discord.com/freshleaf',
   keyDateCards: {
@@ -43,7 +43,7 @@ export const content = {
     `,
   },
   aboutMintSection: {
-    title: 'Fresh Leaf Mint',
+    title: 'Minting a Mushie',
     content: `
     But I must explain to you how all this mistaken idea of denouncing
 

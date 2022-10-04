@@ -1,18 +1,28 @@
-import { Center } from '@chakra-ui/react'
-import { Team } from '../'
+import { Heading, Stack } from '@chakra-ui/react'
+import { Card } from '../'
 
 const TeamSection = () => {
   return (
-    <Center
+    <Stack
       margin={'0 !important'}
       flexDirection={'column'}
       width={'100%'}
-      paddingLeft={{ md: '5rem', base: '2rem' }}
-      paddingRight={{ md: '5rem', base: '2rem' }}
-      paddingBottom={'5rem'}
+      paddingX={'2rem'}
+      paddingY={'2rem'}
+      spacing={'2rem'}
     >
-      <Team />
-    </Center>
+      <Heading size={{ base: '2xl', lg: '3xl', xl: '4xl' }}>Team</Heading>
+      <Stack
+        wrap={'wrap'}
+        justifyContent={'space-evenly'}
+        direction={'row'}
+        minWidth="100%"
+      >
+        <Card role={'The Code Monkey'} name={'DaPuss'} twitter={'@DaPuss'} />
+        <Card role={'All Round Guru'} name={'DaPuss'} twitter={'@DaPuss'} />
+        <Card role={'The AI Guy'} name={'DaPuss'} twitter={'@DaPuss'} />
+      </Stack>
+    </Stack>
   )
 }
 

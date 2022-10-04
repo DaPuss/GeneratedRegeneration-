@@ -4,8 +4,9 @@ import Stack from './Stack'
 import Accordian from './Accordian'
 import ChakraImage from './ChakraImage'
 import Footer from './Footer'
-import Team from './Team'
+import Card from './Card'
 import Web3Connect from './Web3Connect'
+import SocialButton from './SocialButton'
 
 export {
   Link,
@@ -14,6 +15,7 @@ export {
   Accordian,
   ChakraImage as Image,
   Footer,
-  Team,
+  Card,
   Web3Connect,
+  SocialButton,
 }

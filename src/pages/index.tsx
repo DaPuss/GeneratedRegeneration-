@@ -1,3 +1,4 @@
+import React from 'react'
 import type { NextPage } from 'next'
 import { Flex } from '@chakra-ui/react'
 import { Stack, Footer } from '../components'
@@ -33,8 +34,6 @@ const Home: NextPage = () => {
       <AboutMintSection />
       {/** Benefits Section  */}
       <BenefitSection />
-      {/** FAQ Section  */}
-      <FaqSection />
       {/** Team Section  */}
       <TeamSection />
       <Footer />

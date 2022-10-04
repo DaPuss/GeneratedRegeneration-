@@ -1,3 +1,4 @@
+import React from 'react'
 import { Flex, Heading } from '@chakra-ui/react'
 import Logo from '../Logo'
 import { content } from '../../data/content'
@@ -11,9 +12,9 @@ const TitleSection = () => {
       paddingLeft={'2rem'}
       justifyItems={'center'}
     >
-      <Logo fill={'white'} />
+      {/* <Logo fill={'white'} /> */}
       <Heading
-        size={{ base: 'lg', lg: 'xl', xl: '4xl' }}
+        size={{ base: 'lg', lg: '2xl', xl: '4xl' }}
         color={'section.title.header'}
         ml={5}
       >

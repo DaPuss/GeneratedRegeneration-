@@ -1,4 +1,4 @@
-import { Center } from '@chakra-ui/react'
+import { Center, Heading } from '@chakra-ui/react'
 import { Accordian } from '../'
 import { content } from '../../data/content'
 
@@ -8,9 +8,13 @@ const FaqSection = () => {
       margin={'0 !important'}
       flexDirection={'column'}
       width={'100%'}
-      paddingLeft={{ md: '5rem', base: '2rem' }}
-      paddingRight={{ md: '5rem', base: '2rem' }}
+      paddingX={'2rem'}
+      flexGrow={1}
     >
+      <Heading size={{ base: '2xl', lg: '3xl', xl: '4xl' }}>
+        Frequently Asked Questions
+      </Heading>
+
       <Accordian content={content.faq} />
     </Center>
   )

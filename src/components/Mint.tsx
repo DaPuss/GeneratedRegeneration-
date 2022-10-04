@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   Center,
   Flex,
@@ -37,8 +37,12 @@ const Mint = () => {
   return (
     <Center>
       <Flex alignItems={'center'} margin={'3rem'} direction={'column'}>
-        <Heading size={'2xl'} marginTop={'3rem'} marginBottom={'3rem'}>
-          Mint your Tree
+        <Heading
+          size={{ base: '2xl', lg: '3xl', xl: '4xl' }}
+          marginTop={'3rem'}
+          marginBottom={'3rem'}
+        >
+          Mint a Mushie!
         </Heading>
         <HStack>
           <NumberInput
@@ -49,8 +53,9 @@ const Mint = () => {
             max={10}
           >
             <NumberInputField
+              height={'55px'}
               borderRightRadius={0}
-              borderLeftRadius={20}
+              borderLeftRadius={10}
               paddingRight={0}
               border={'1px solid #ffff'}
               bg="#fafafa"
@@ -58,6 +63,7 @@ const Mint = () => {
           </NumberInput>
           {isConnected ? (
             <Button
+              height={'55px'}
               borderLeftRadius={0}
               marginLeft={'0 !important'}
               onClick={() => mintNft(value)}
@@ -66,9 +72,10 @@ const Mint = () => {
             </Button>
           ) : (
             <Web3Connect
+              height={'55px'}
               width={'100%'}
               borderLeftRadius={0}
-              borderRightRadius={20}
+              borderRightRadius={10}
               marginLeft={'0 !important'}
             />
           )}

@@ -6,7 +6,6 @@ import {
   AccordionPanel,
   AccordionIcon,
   Box,
-  Heading,
 } from '@chakra-ui/react'
 
 interface AccordianProps {
@@ -20,7 +19,6 @@ interface AccordianItemProps {
 const Accordian = ({ content }: AccordianProps) => {
   return (
     <Box width="100%" m={'1rem'} padding={{ base: '0', md: '1rem' }}>
-      <Heading mb="5">FAQs</Heading>
       <ChakraAccordion width="100%" allowMultiple>
         {content.map((item, index) => (
           <AcordianItem

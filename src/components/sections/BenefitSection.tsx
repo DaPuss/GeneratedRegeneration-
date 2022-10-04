@@ -1,3 +1,4 @@
+import React from 'react'
 import { Stack, VStack, Heading, Text } from '@chakra-ui/react'
 import {
   GiFruitTree,
@@ -10,41 +11,40 @@ import { content } from '../../data/content'
 
 const BenefitSection = () => {
   return (
-    <Stack bg={'section.benefits'} padding={'5rem'}>
-      <Heading marginBottom={'4rem'} size={'3xl'}>
-        Benefits
+    <Stack bg={'section.benefits'} paddingX={'2rem'} paddingY={'2rem'}>
+      <Heading
+        size={{ base: '2xl', lg: '3xl', xl: '4xl' }}
+        marginBottom={'1rem'}
+      >
+        Benefits of owning a Mushie
       </Heading>
       <Stack
         direction={{ base: 'column', md: 'row' }}
         width={'100%'}
         justifyContent={'space-between'}
         alignItems={'center'}
-        paddingBottom={'4rem'}
-        paddingTop={'4rem'}
+        paddingBottom={'1rem'}
+        paddingTop={'1rem'}
       >
         <VStack>
           <GiFruitTree size={150} />
-          <Heading>1</Heading>
           <Text>{content.benefits.benefit1}</Text>
         </VStack>
         <VStack>
           <GiEarthAmerica size={150} />
-          <Heading>2</Heading>
+          re
           <Text>{content.benefits.benefit2}</Text>
         </VStack>
         <VStack>
           <GiRiver size={150} />
-          <Heading>3</Heading>
           <Text>{content.benefits.benefit3}</Text>
         </VStack>
         <VStack>
           <GiHealthPotion size={150} />
-          <Heading>4</Heading>
           <Text>{content.benefits.benefit4}</Text>
         </VStack>
         <VStack>
           <BiHappyHeartEyes size={150} />
-          <Heading>5</Heading>
           <Text>{content.benefits.benefit5}</Text>
         </VStack>
       </Stack>

@@ -1,3 +1,4 @@
+import React from 'react'
 import { Center, Text, Heading, AspectRatio } from '@chakra-ui/react'
 import Stack from '../Stack'
 import ChakraImage from '../ChakraImage'
@@ -15,7 +16,12 @@ const VisionSection = () => {
         width={{ base: '100%', md: '50%' }}
         padding={'5rem'}
       >
-        <Heading marginBottom={'2rem'}>{content.visionSection.title}</Heading>
+        <Heading
+          size={{ base: '2xl', lg: '3xl', xl: '4xl' }}
+          marginBottom={'2rem'}
+        >
+          {content.visionSection.title}
+        </Heading>
         <Text>{content.visionSection.content}</Text>
       </Center>
     </Stack>

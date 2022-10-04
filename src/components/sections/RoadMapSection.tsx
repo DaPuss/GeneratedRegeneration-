@@ -1,3 +1,4 @@
+import React from 'react'
 import { Center, Text, Heading, AspectRatio } from '@chakra-ui/react'
 import Stack from '../Stack'
 import ChakraImage from '../ChakraImage'
@@ -12,7 +13,12 @@ const RoadMapSection = () => {
         width={{ base: '100%', md: '50%' }}
         padding={'5rem'}
       >
-        <Heading marginBottom={'2rem'}>{content.roadmapSection.title}</Heading>
+        <Heading
+          size={{ base: '2xl', lg: '3xl', xl: '4xl' }}
+          marginBottom={'2rem'}
+        >
+          {content.roadmapSection.title}
+        </Heading>
         <Text>{content.roadmapSection.content}</Text>
       </Center>
       <AspectRatio ratio={1 / 1} width={{ base: '100%', md: '50%' }}>

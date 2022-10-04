@@ -1,5 +1,5 @@
 import { Flex, VStack, Heading, Text, Stack } from '@chakra-ui/react'
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { content } from '../../data/content'
 import { useWeb3 } from '../../hooks/useWeb3'
 
@@ -29,7 +29,7 @@ const KeyDateCard = ({
     <VStack
       boxShadow={'0px 0px 10px rgba(0, 0, 0, .5)'}
       spacing={'1rem'}
-      padding={'3rem'}
+      padding={'4rem'}
       marginLeft={'1rem !important'}
       marginRight={'1rem !important'}
       bg={'#FFFFF0'}
@@ -47,6 +47,7 @@ const KeyDateCard = ({
     </VStack>
   )
 }
+
 const KeyDateSection = () => {
   const cards = [
     content.keyDateCards.card1,

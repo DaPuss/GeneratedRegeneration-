@@ -19,20 +19,20 @@ const colors = {
   ...chakraTheme.colors,
 
   buttons: {
-    main: '#c1fba4',
-    social: '#a98467',
+    main: '#35c270',
+    social: '#ddb98f',
   },
   section: {
     title: {
       header: 'white',
-      background: '#a98467',
+      background: '#ddb98f',
     },
-    footer: '#90f1ef',
+    footer: '#cb95e7',
     keyDates: {
-      supply: '#c1fba4',
+      supply: '#35c270',
     },
     benefits: '#5cdb95',
-    accordian: '#ee6055',
+    accordian: '#ddb98f',
   },
 }
 

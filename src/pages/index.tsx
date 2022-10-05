@@ -8,7 +8,7 @@ import {
   AboutProjectSection,
   VisionSection,
   AboutMintSection,
-  FaqSection,
+  GamePlanSection,
   TeamSection,
   BenefitSection,
   RoadMapSection,
@@ -34,6 +34,8 @@ const Home: NextPage = () => {
       <AboutMintSection />
       {/** Benefits Section  */}
       <BenefitSection />
+      {/** Gameplan Section  */}
+      <GamePlanSection />
       {/** Team Section  */}
       <TeamSection />
       <Footer />

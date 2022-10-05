@@ -4,6 +4,7 @@ import TitleSection from './TitleSection'
 import VisionSection from './VisionSection'
 import AboutMintSection from './AboutMintSection'
 import FaqSection from './FaqSection'
+import GamePlanSection from './GamePlanSection'
 import TeamSection from './TeamSection'
 import BenefitSection from './BenefitSection'
 import RoadMapSection from './RoadMapSection'
@@ -19,5 +20,6 @@ export {
   TeamSection,
   BenefitSection,
   RoadMapSection,
+  GamePlanSection,
   KeyDateSection,
 }

@@ -31,7 +31,7 @@ const colors = {
     keyDates: {
       supply: '#35c270',
     },
-    benefits: '#5cdb95',
+    benefits: '#cb95e7',
     accordian: '#ddb98f',
   },
 }

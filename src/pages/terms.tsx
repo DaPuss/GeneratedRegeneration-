@@ -13,6 +13,7 @@ const Terms: NextPage = () => {
         marginBottom={'5rem'}
         marginTop={'5rem'}
         spacing={'10px'}
+        fontSize={'lg'}
       >
         <Heading>Dads NFT License</Heading>
         <Text>

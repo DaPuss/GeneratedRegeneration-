@@ -32,6 +32,7 @@ const Mint = () => {
 
   useEffect(() => {
     setMintCost(() => getMintPrice(value))
+    //eslint-disable-next-line
   }, [value])
 
   return (

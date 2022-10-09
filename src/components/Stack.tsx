@@ -12,6 +12,7 @@ const Stack = ({ children, reverseColumn = false }: props) => {
       spacing={0}
       width={'100%'}
       direction={{ base: direction, md: 'row' }}
+      fontSize={'lg'}
     >
       {children}
     </ChakraStack>

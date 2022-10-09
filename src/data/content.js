@@ -69,6 +69,74 @@ export const content = {
     benefit4: 'Make the planet healthier for everyone',
     benefit5: 'Improve wellbeing through increased greenspace',
   },
+  gamePlanSection: [
+    {
+      title: 'Impact',
+      color: '#ffb2d3',
+      content: `
+    But I must explain to you how all this mistaken idea of denouncing
+
+    pleasure and praising pain was born pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences
+
+    pleasure and praising pain was born pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences
+    `,
+    },
+    {
+      title: 'Art',
+      color: '#ffb2d3',
+      content: `
+    But I must explain to you how all this mistaken idea of denouncing
+
+    pleasure and praising pain was born pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences
+
+    pleasure and praising pain was born pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences
+    `,
+    },
+    {
+      title: 'Community',
+      color: '#ffb2d3',
+      content: `
+    But I must explain to you how all this mistaken idea of denouncing
+
+    pleasure and praising pain was born pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences
+
+    pleasure and praising pain was born pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences
+    `,
+    },
+    {
+      title: 'Partnerships',
+      color: '#ffb2d3',
+      content: `
+    But I must explain to you how all this mistaken idea of denouncing
+
+    pleasure and praising pain was born pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences
+
+    pleasure and praising pain was born pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences
+    `,
+    },
+    {
+      title: 'Passion',
+      color: '#ffb2d3',
+      content: `
+    But I must explain to you how all this mistaken idea of denouncing
+
+    pleasure and praising pain was born pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences
+
+    pleasure and praising pain was born pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences
+    `,
+    },
+    {
+      title: 'Looking Ahead',
+      color: '#ffb2d3',
+      content: `
+    But I must explain to you how all this mistaken idea of denouncing
+
+    pleasure and praising pain was born pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences
+
+    pleasure and praising pain was born pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences
+    `,
+    },
+  ],
   faq: [
     {
       title: 'Faq 1',

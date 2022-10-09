@@ -7,7 +7,7 @@ import Footer from './Footer'
 import Card from './Card'
 import Web3Connect from './Web3Connect'
 import SocialButton from './SocialButton'
-
+import SectionDivider from './SectionDivider/Divider'
 export {
   Link,
   Logo,
@@ -18,4 +18,5 @@ export {
   Card,
   Web3Connect,
   SocialButton,
+  SectionDivider,
 }

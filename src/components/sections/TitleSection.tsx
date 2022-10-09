@@ -1,6 +1,5 @@
 import React from 'react'
 import { Flex, Heading } from '@chakra-ui/react'
-import Logo from '../Logo'
 import { content } from '../../data/content'
 const TitleSection = () => {
   return (

@@ -6,12 +6,14 @@ import { BsTwitter, BsDiscord } from 'react-icons/bs'
 import { FaQuestionCircle } from 'react-icons/fa'
 import SocialButton from '../components/SocialButton'
 import { content } from '../data/content'
-
+import Link from 'next/link'
 const Faq: NextPage = () => {
   return (
     <Flex direction={'column'} h={'100vh'}>
-      <HStack ml={{ base: '2rem', md: '5rem' }} padding={'1rem'}>
-        <Button>Home</Button>
+      <HStack mx={{ base: '2rem' }} padding={'1rem'}>
+        <Link href={'/'}>
+          <Button>Home</Button>
+        </Link>
         <Box display={'flex'} flexGrow={1}></Box>
 
         <SocialButton

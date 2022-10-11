@@ -11,7 +11,7 @@ import { content } from '../../data/content'
 const MintSection = () => {
   return (
     <Box ml={'0 !important'} width={{ base: '100%', md: '50%' }}>
-      <HStack ml={{ base: '2rem', md: '5rem' }} pt={'1rem'}>
+      <HStack ml={{ base: '2rem', md: '5rem' }} pt={'2rem'}>
         <SocialButton
           link={content.discordLink}
           icon={<BsDiscord fill={'white'} size={'1.5rem'} />}

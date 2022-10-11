@@ -37,13 +37,13 @@ const Mint = () => {
 
   return (
     <Center>
-      <Flex alignItems={'center'} margin={'3rem'} direction={'column'}>
+      <Flex alignItems={'center'} margin={'6rem'} direction={'column'}>
         <Heading
           size={{ base: '2xl', lg: '3xl', xl: '4xl' }}
-          marginTop={'3rem'}
-          marginBottom={'3rem'}
+          marginTop={'6rem'}
+          marginBottom={'6rem'}
         >
-          Mint a Mushie!
+          Mint a NFT!
         </Heading>
         <HStack>
           <NumberInput
@@ -88,7 +88,7 @@ const Mint = () => {
           paddingRight={'1rem'}
         >
           <HStack>
-            <Text width={'100%'}>1 x Tree</Text>
+            <Text width={'100%'}>{value} x NFT</Text>
             <Text width={'100%'} textAlign={'right'}>
               {mintCost}
               ETH

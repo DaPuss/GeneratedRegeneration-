@@ -1,24 +1,27 @@
 import React from 'react'
-import { Flex, Heading } from '@chakra-ui/react'
-import { content } from '../../data/content'
+import { Flex } from '@chakra-ui/react'
+import Image from 'next/image'
+import { useMediaQuery } from '@chakra-ui/react'
 const TitleSection = () => {
+  const [isLargerThan52em] = useMediaQuery('(min-width: 52em)')
+
   return (
     <Flex
       flexDirection={'row'}
       width={{ base: '100%', md: '50%' }}
       bg={'section.title.background'}
       alignItems={'start'}
-      paddingLeft={'2rem'}
-      justifyItems={'center'}
+      padding={'1rem'}
+      justifyContent={'start'}
+      minHeight={{ sm: '0', md: '50vh' }}
     >
-      {/* <Logo fill={'white'} /> */}
-      <Heading
-        size={{ base: 'lg', lg: '2xl', xl: '4xl' }}
-        color={'section.title.header'}
-        ml={5}
-      >
-        {content.title}
-      </Heading>
+      <Image
+        loader={() => 'Brand.png'}
+        src="Brand.png"
+        alt="Picture of the author"
+        width={isLargerThan52em ? 538 : 269}
+        height={isLargerThan52em ? 66 : 33}
+      />
     </Flex>
   )
 }

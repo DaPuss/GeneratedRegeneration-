@@ -56,7 +56,7 @@ function Footer() {
             </span>
           </Tooltip>
         </Link>
-        <Link href="/faq">
+        <Link href={'/faq'}>
           <Tooltip placement="top" label="Frequently Asked Questions">
             <span>
               <Icon

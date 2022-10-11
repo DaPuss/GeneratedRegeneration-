@@ -16,12 +16,12 @@ const KeyDateCard = ({
 }) => {
   const mintPrice = 0.09
   const maxSupply = 9000
-  const {totalSupply} = useWeb3()
+  const { totalSupply } = useWeb3()
   const [loading, setIsLoading] = useState(true)
 
-  useEffect (() => {
-    if(totalSupply){
-      setIsLoading(false);
+  useEffect(() => {
+    if (totalSupply) {
+      setIsLoading(false)
     }
   }, [totalSupply])
 
@@ -29,9 +29,11 @@ const KeyDateCard = ({
     <VStack
       boxShadow={'0px 0px 10px rgba(0, 0, 0, .5)'}
       spacing={'1rem'}
-      padding={'4rem'}
-      marginLeft={'1rem !important'}
-      marginRight={'1rem !important'}
+      padding={'2rem'}
+      marginLeft={'2rem !important'}
+      marginRight={'2rem !important'}
+      borderRadius={'8px'}
+      maxHeight={'350px'}
       bg={'#FFFFF0'}
     >
       <Heading>{date}</Heading>
@@ -55,7 +57,7 @@ const KeyDateSection = () => {
     content.keyDateCards.card3,
   ]
   return (
-    <Flex position={'relative'}>
+    <Flex position={'relative'} minHeight={'50vh'}>
       <Flex
         top={0}
         left={0}
@@ -88,4 +90,3 @@ const KeyDateSection = () => {
 }
 
 export default KeyDateSection
-

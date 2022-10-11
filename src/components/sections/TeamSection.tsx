@@ -9,8 +9,9 @@ const TeamSection = () => {
       width={'100%'}
       paddingX={'2rem'}
       paddingY={'2rem'}
-      spacing={'2rem'}
+      spacing={'6rem'}
       bg={'white'}
+      textAlign={'center'}
     >
       <Heading size={{ base: '2xl', lg: '3xl', xl: '4xl' }}>Team</Heading>
       <Stack

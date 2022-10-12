@@ -17,9 +17,9 @@ function Footer() {
       padding={'1rem'}
     >
       <Stack paddingY={'10px'} spacing={'4rem'} direction={'row'}>
-        <Link href={content.twitterLink}>
-          <Tooltip placement="top" cursor={'pointer'} label="Twitter">
-            <span>
+        <Tooltip placement="top" cursor={'pointer'} label="Twitter">
+          <span>
+            <Link href={content.twitterLink}>
               <Icon
                 _hover={{ fill: 'white' }}
                 cursor={'pointer'}
@@ -27,12 +27,12 @@ function Footer() {
                 h={'35px'}
                 as={BsTwitter}
               />
-            </span>
-          </Tooltip>
-        </Link>
-        <Link href={content.discordLink}>
-          <Tooltip placement="top" cursor={'pointer'} label="Discord">
-            <span>
+            </Link>
+          </span>
+        </Tooltip>
+        <Tooltip placement="top" cursor={'pointer'} label="Discord">
+          <span>
+            <Link href={content.discordLink}>
               <Icon
                 _hover={{ fill: 'white' }}
                 cursor={'pointer'}
@@ -40,12 +40,12 @@ function Footer() {
                 h={'35px'}
                 as={BsDiscord}
               />
-            </span>
-          </Tooltip>
-        </Link>
-        <Link href="/terms">
-          <Tooltip placement="top" label="Terms and Conditions">
-            <span>
+            </Link>
+          </span>
+        </Tooltip>
+        <Tooltip placement="top" label="Terms and Conditions">
+          <span>
+            <Link href="/terms">
               <Icon
                 _hover={{ fill: 'white' }}
                 cursor={'pointer'}
@@ -53,12 +53,12 @@ function Footer() {
                 h={'35px'}
                 as={FaBook}
               />
-            </span>
-          </Tooltip>
-        </Link>
-        <Link href={'/faq'}>
-          <Tooltip placement="top" label="Frequently Asked Questions">
-            <span>
+            </Link>
+          </span>
+        </Tooltip>
+        <Tooltip placement="top" label="Frequently Asked Questions">
+          <span>
+            <Link href={'/faq'}>
               <Icon
                 _hover={{ fill: 'white' }}
                 cursor={'pointer'}
@@ -66,9 +66,9 @@ function Footer() {
                 h={'35px'}
                 as={FaQuestionCircle}
               />
-            </span>
-          </Tooltip>
-        </Link>
+            </Link>
+          </span>
+        </Tooltip>
       </Stack>
       <Text>{'Made with ❤️ by Dylan'}</Text>
     </Stack>

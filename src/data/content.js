@@ -1,7 +1,7 @@
 export const content = {
-  title: 'Mushie',
-  twitterLink: 'https://twitter.com/freshleaf',
-  discordLink: 'https://discord.com/freshleaf',
+  title: 'Company Name',
+  twitterLink: 'https://twitter.com',
+  discordLink: 'https://discord.com',
   keyDateCards: {
     card1: {
       date: 'November 1',
@@ -43,7 +43,7 @@ export const content = {
     `,
   },
   aboutMintSection: {
-    title: 'Minting a Mushie',
+    title: 'Minting a NFT',
     content: `
     But I must explain to you how all this mistaken idea of denouncing
 
@@ -53,7 +53,7 @@ export const content = {
     `,
   },
   aboutProjectSection: {
-    title: 'Fresh Leaf',
+    title: 'About Project',
     content: `
     But I must explain to you how all this mistaken idea of denouncing
 
@@ -83,7 +83,7 @@ export const content = {
     },
     {
       title: 'Art',
-      color: '#ffb2d3',
+      color: '#6D9384',
       content: `
     But I must explain to you how all this mistaken idea of denouncing
 
@@ -94,7 +94,7 @@ export const content = {
     },
     {
       title: 'Community',
-      color: '#ffb2d3',
+      color: '#E1A080',
       content: `
     But I must explain to you how all this mistaken idea of denouncing
 
@@ -105,7 +105,7 @@ export const content = {
     },
     {
       title: 'Partnerships',
-      color: '#ffb2d3',
+      color: '#E6D0A9',
       content: `
     But I must explain to you how all this mistaken idea of denouncing
 
@@ -116,7 +116,7 @@ export const content = {
     },
     {
       title: 'Passion',
-      color: '#ffb2d3',
+      color: '#F4F0E4',
       content: `
     But I must explain to you how all this mistaken idea of denouncing
 
@@ -127,7 +127,7 @@ export const content = {
     },
     {
       title: 'Looking Ahead',
-      color: '#ffb2d3',
+      color: '#C6D5CC',
       content: `
     But I must explain to you how all this mistaken idea of denouncing
 

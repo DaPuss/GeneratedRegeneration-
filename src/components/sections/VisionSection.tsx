@@ -9,7 +9,7 @@ const VisionSection = () => {
     <SectionWrapper fill="white">
       <Stack reverseColumn={true}>
         <AspectRatio ratio={1 / 1} width={{ base: '100%', md: '50%' }}>
-          <ChakraImage layout={'fill'} src={'/150.png'} />
+          <ChakraImage priority layout={'fill'} src={'/150.png'} />
         </AspectRatio>
         <Center
           margin={'0 !important'}

@@ -3,7 +3,7 @@ import { chakra } from '@chakra-ui/react'
 
 const ChakraImage = chakra(Image, {
   shouldForwardProp: (prop: string) =>
-    ['width', 'height', 'layout', 'src', 'alt'].includes(prop),
+    ['width', 'height', 'layout', 'src', 'alt', 'priority'].includes(prop),
 })
 
 export default ChakraImage

@@ -15,6 +15,7 @@ const Card = ({ role, name, twitter, image }: CardProps) => {
     <Box textAlign={'center'}>
       <Box>
         <ChakraImage
+          priority
           borderRadius={10}
           src={image}
           width={size}

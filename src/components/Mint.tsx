@@ -11,10 +11,11 @@ import {
   NumberInput,
   NumberInputField,
 } from '@chakra-ui/react'
-import { useAccount } from 'wagmi'
+import { useAccount, useNetwork } from 'wagmi'
 import { useWeb3 } from '../hooks/useWeb3'
 import Web3Connect from './Web3Connect'
 const Mint = () => {
+  const { chain } = useNetwork()
   const { status } = useAccount()
   const [isConnected, setIsConnected] = useState(false)
   const [value, setValue] = useState(1)
@@ -35,6 +36,7 @@ const Mint = () => {
     //eslint-disable-next-line
   }, [value])
 
+  const isConnectToMumbai = chain?.name == 'Polygon Mumbai'
   return (
     <Center>
       <Flex alignItems={'center'} margin={'6rem'} direction={'column'}>
@@ -45,6 +47,12 @@ const Mint = () => {
         >
           Mint a NFT!
         </Heading>
+
+        {!isConnectToMumbai && (
+          <Text textColor={'red'} color={'red'}>
+            Connect to the Mumbai Network
+          </Text>
+        )}
         <HStack>
           <NumberInput
             onChange={(value) => setValue(parseInt(value))}
@@ -64,6 +72,7 @@ const Mint = () => {
           </NumberInput>
           {isConnected ? (
             <Button
+              disabled={!isConnectToMumbai}
               height={'55px'}
               borderLeftRadius={0}
               marginLeft={'0 !important'}

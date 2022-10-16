@@ -11,7 +11,9 @@ import {
   ModalCloseButton,
   useDisclosure,
   ButtonProps,
+  Tooltip,
 } from '@chakra-ui/react'
+import { MdLogout } from 'react-icons/md'
 
 const Web3Connect = (props: ButtonProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
@@ -39,9 +41,12 @@ const Web3Connect = (props: ButtonProps) => {
       address?.length - 4
     )}`
     return (
-      <Button {...props} mt={4} onClick={disconnectFunction}>
-        Disconnect: {ensName ? `${ensName} (${addressConcat})` : addressConcat}
-      </Button>
+      <Tooltip cursor={'pointer'} label={'Disconnect Wallet'}>
+        <Button {...props} mt={4} onClick={disconnectFunction}>
+          {ensName ? `${ensName} (${addressConcat})` : addressConcat}
+          <MdLogout />
+        </Button>
+      </Tooltip>
     )
   }
 

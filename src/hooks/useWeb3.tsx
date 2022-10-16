@@ -1,28 +1,32 @@
-import { useCallback, useEffect} from 'react'
+import { useEffect } from 'react'
 import { useContractWrite } from 'wagmi'
 import contractInterface from '../abi/abi.json'
 import { useContractRead } from 'wagmi'
-import {  ethers, BigNumber } from 'ethers'
-import { useToast} from '@chakra-ui/react'
+import { ethers, BigNumber } from 'ethers'
+import { useToast } from '@chakra-ui/react'
+import { useAccount } from 'wagmi'
+
 //custom hook that returns a function to call the mint function of the contract using WAGMI hooks
 
 export const useWeb3 = () => {
+  const { address } = useAccount()
   const toast = useToast()
   const addressOrName = process.env.NEXT_PUBLIC_CONTRACT_ADDRESS
-  const mintPrice = 0.09
+  const mintPrice = 0.05
   const writeMint = useContractWrite({
     addressOrName,
     contractInterface,
-    functionName: 'mintMany',
-    onError(error){
+    functionName: 'mint',
+    onError(error) {
       toast({
         title: 'Error.',
         description: formatError(error.message),
         status: 'error',
         duration: 9000,
         isClosable: true,
-      })},
-    onSuccess(){
+      })
+    },
+    onSuccess() {
       toast({
         title: 'Successful.',
         description: "You've minted your NFT.",
@@ -31,22 +35,19 @@ export const useWeb3 = () => {
         isClosable: true,
       })
     },
-    onMutate({ args, overrides }) {
-      console.log('Mutate', { args, overrides })
-    },
   })
 
-  const formatError = (error: string) : string => {
-    if(error.includes("Max mint")){
+  const formatError = (error: string): string => {
+    if (error.includes('Max mint')) {
       return "You've reached the maximum allowence for this wallet."
     }
-    if(error.includes("Insufficient funds")){
-      return "Insufficient funds provided for this transaction."
+    if (error.includes('Insufficient funds')) {
+      return 'Insufficient funds provided for this transaction.'
     }
-    if(error.includes("Max supply reached")){
-      return "The maximum supply has been meet, better luck next time."
-    }  
-    return error;
+    if (error.includes('Max supply reached')) {
+      return 'The maximum supply has been meet, better luck next time.'
+    }
+    return error
   }
 
   const readTotalSupply = useContractRead({
@@ -56,36 +57,36 @@ export const useWeb3 = () => {
   })
 
   const getCurrentSupply = () => {
-    const currentSupply = readTotalSupply.isSuccess?  BigNumber.from(readTotalSupply.data).toNumber() : 0;
+    const currentSupply = readTotalSupply.isSuccess
+      ? BigNumber.from(readTotalSupply.data).toNumber()
+      : 0
     return currentSupply
   }
 
-  const mintNft = (mintAmount: number)  => {
-    if(mintAmount < 1) return;
-    const {write, data, isError, isLoading, isSuccess, error} = writeMint;
-    const totalCost = getMintPrice(mintAmount);
-    
+  const mintNft = (mintAmount: number) => {
+    if (mintAmount < 1) return
+    const { write, data, isError, isLoading, isSuccess, error } = writeMint
+    const totalCost = getMintPrice(mintAmount)
     write({
-      args: [mintAmount],
+      args: [address, mintAmount],
       overrides: {
-        value: ethers.utils.parseEther(totalCost)
-      }
+        value: ethers.utils.parseEther(totalCost),
+        gasLimit: 500000,
+      },
     })
-    return {isError, data, isSuccess, isLoading, error}
-  };
+    return { isError, data, isSuccess, isLoading, error }
+  }
 
   const getMintPrice = (mintAmount: number) => {
     const totalPrice = (mintAmount * mintPrice * 100) / 100
     return isNaN(totalPrice) ? '0.00' : totalPrice.toFixed(2)
   }
 
-
   useEffect(() => {
     readTotalSupply.refetch()
   }, [mintNft])
-  
 
   const totalSupply = getCurrentSupply()
 
-  return {mintNft, getMintPrice, totalSupply}
+  return { mintNft, getMintPrice, totalSupply }
 }

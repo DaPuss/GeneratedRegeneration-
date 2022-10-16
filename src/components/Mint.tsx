@@ -39,7 +39,11 @@ const Mint = () => {
   const isConnectToMumbai = chain?.name == 'Polygon Mumbai'
   return (
     <Center>
-      <Flex alignItems={'center'} margin={'6rem'} direction={'column'}>
+      <Flex
+        alignItems={'center'}
+        margin={{ base: '2rem', md: '6rem' }}
+        direction={'column'}
+      >
         <Heading
           size={{ base: '2xl', lg: '3xl', xl: '4xl' }}
           marginTop={'6rem'}
@@ -48,7 +52,7 @@ const Mint = () => {
           Mint a NFT!
         </Heading>
 
-        {!isConnectToMumbai && (
+        {!isConnectToMumbai && isConnected && (
           <Text textColor={'red'} color={'red'}>
             Connect to the Mumbai Network
           </Text>

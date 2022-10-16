@@ -6,16 +6,17 @@ type CardProps = {
   role: string
   name: string
   twitter: string
+  image: string
 }
 
-const Card = ({ role, name, twitter }: CardProps) => {
+const Card = ({ role, name, twitter, image }: CardProps) => {
   const size = useBreakpointValue({ base: '150', md: '250' })
   return (
     <Box textAlign={'center'}>
       <Box>
         <ChakraImage
           borderRadius={10}
-          src={'/ThePussPFP.jpg'}
+          src={image}
           width={size}
           height={size}
           alt={`${role}-card`}

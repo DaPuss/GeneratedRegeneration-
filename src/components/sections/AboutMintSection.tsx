@@ -9,7 +9,7 @@ const AboutMintSection = () => {
     <SectionWrapper fill="#cb95e7">
       <Stack reverseColumn={true}>
         <AspectRatio ratio={1 / 1} width={{ base: '100%', md: '50%' }}>
-          <ChakraImage layout={'fill'} src={'/main4.jpg'} />
+          <ChakraImage layout={'fill'} src={'/quad.png'} />
         </AspectRatio>
         <Center
           margin={'0 !important'}

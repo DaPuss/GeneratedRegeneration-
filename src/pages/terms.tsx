@@ -1,24 +1,39 @@
+import { useEffect } from 'react'
 import type { NextPage } from 'next'
 import { Flex, Text, Heading, Stack } from '@chakra-ui/react'
 import { Footer } from '../components'
-import {} from '../components/sections'
+import SimpleHeader from '../components/SimpleHeader'
+
 const Terms: NextPage = () => {
+  useEffect(() => {
+    setTimeout(
+      () =>
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth',
+        }),
+      1000
+    )
+  }, [])
+
   return (
     <Flex direction={'column'}>
+      <SimpleHeader />
+
       <Stack
-        textAlign={'center'}
+        textAlign={'left'}
         alignItems={'center'}
-        marginRight={'25%'}
-        marginLeft={'25%'}
+        marginRight={'15%'}
+        marginLeft={{ base: '2rem', md: '15%' }}
         marginBottom={'5rem'}
         marginTop={'5rem'}
         spacing={'10px'}
         fontSize={'lg'}
       >
-        <Heading>Dads NFT License</Heading>
+        <Heading>NFT License</Heading>
         <Text>
-          This contract governs the NFT Collection of 6000 pieces of Art titled:
-          ‘Dads by Rami Niemi’. 1. Definitions
+          This contract governs the NFT Collection of 999 pieces of Art titled:
+          Big boy NFT’. 1. Definitions
         </Text>
         <Text>
           “Art” means any art, design, drawing, or other pictorial or graphic
@@ -180,7 +195,7 @@ const Terms: NextPage = () => {
           you will be responsible to reimburse ** EDIT ** Gallery Oy for any
           costs and expenses incurred by ** EDIT ** Gallery Oy during the course
           of enforcing the terms of this License against you. Studio Pekka **
-          EDIT ** Gallery Provable Fairness Dads NFT License
+          EDIT ** Gallery Provable Fairness Big Boy NFT License
         </Text>
       </Stack>
 

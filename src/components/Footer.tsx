@@ -45,7 +45,7 @@ function Footer() {
         </Tooltip>
         <Tooltip placement="top" label="Terms and Conditions">
           <span>
-            <Link href="/terms">
+            <Link href="/terms" scroll={true}>
               <Icon
                 _hover={{ fill: 'white' }}
                 cursor={'pointer'}

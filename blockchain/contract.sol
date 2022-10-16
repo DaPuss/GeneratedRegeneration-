@@ -2,8 +2,8 @@
 
 pragma solidity ^0.8.7;
 
-import "contracts/token/ERC721/extensions/ERC721Enumerable.sol";
-import "contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 
 contract TheStripesNFT is ERC721Enumerable, Ownable {
     using Strings for uint256;
@@ -13,7 +13,7 @@ contract TheStripesNFT is ERC721Enumerable, Ownable {
     uint256 public cost = 0.05 ether;
     uint256 public presaleCost = 0.03 ether;
     uint256 public maxSupply = 992;
-    uint256 public maxMintAmount = 20;
+    uint256 public maxMintAmount = 5;
     bool public paused = false;
     mapping(address => bool) public whitelisted;
     mapping(address => bool) public presaleWallets;
@@ -41,14 +41,11 @@ contract TheStripesNFT is ERC721Enumerable, Ownable {
         require(supply + _mintAmount <= maxSupply);
 
         if (msg.sender != owner()) {
-            if (whitelisted[msg.sender] != true) {
-                if (presaleWallets[msg.sender] != true) {
-                    //general public
-                    require(msg.value >= cost * _mintAmount);
-                } else {
-                    //presale
-                    require(msg.value >= presaleCost * _mintAmount);
-                }
+            if (whitelisted[msg.sender] == true || presaleWallets[msg.sender] == true) {
+                require(msg.value >= presaleCost * _mintAmount);
+            }
+            else{
+                require(msg.value >= cost * _mintAmount);
             }
         }
 

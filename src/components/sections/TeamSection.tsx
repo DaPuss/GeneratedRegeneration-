@@ -20,9 +20,24 @@ const TeamSection = () => {
         direction={'row'}
         minWidth="100%"
       >
-        <Card role={'The Code Monkey'} name={'DaPuss'} twitter={'@DaPuss'} />
-        <Card role={'All Round Guru'} name={'DaPuss'} twitter={'@DaPuss'} />
-        <Card role={'The AI Guy'} name={'DaPuss'} twitter={'@DaPuss'} />
+        <Card
+          role={'The Code Monkey'}
+          name={'DaPuss'}
+          twitter={'@DaPuss'}
+          image={'/pfp1.png'}
+        />
+        <Card
+          role={'All Round Guru'}
+          name={'DaPuss'}
+          twitter={'@DaPuss'}
+          image={'/pfp2.png'}
+        />
+        <Card
+          role={'The AI Guy'}
+          name={'DaPuss'}
+          twitter={'@DaPuss'}
+          image={'/pfp3.png'}
+        />
       </Stack>
     </Stack>
   )

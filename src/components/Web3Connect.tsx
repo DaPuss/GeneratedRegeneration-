@@ -47,7 +47,7 @@ const Web3Connect = (props: ButtonProps) => {
 
   return (
     <>
-      <Button {...props} mt={4} onClick={onOpen}>
+      <Button {...props} mt={4} onClick={onOpen} minWidth={170}>
         Connect Wallet
       </Button>
       <Modal isOpen={isOpen} onClose={onClose}>
